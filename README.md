@@ -1,4 +1,4 @@
-# Pizza Delivery app created witch create-react-app.
+# Pizza Delivery app created with create-react-app.
 
 ### `npm start` for start app in dev mode.
 
