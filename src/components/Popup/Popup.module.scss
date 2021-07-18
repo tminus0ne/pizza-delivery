@@ -1,0 +1,49 @@
+.popup {
+  display: flex;
+  align-items: center;
+
+  img {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    &:active {
+      transform: rotate(180deg);
+    }
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    background: #fff;
+  }
+
+  p {
+    margin: 15px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.015em;
+  }
+
+  span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.015em;
+    color: #fe5f1e;
+    padding-bottom: 2px;
+    cursor: pointer;
+    border-bottom: 1px dashed #fe5f1e;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: lighten(#fe5f1e, 15%);
+    }
+  }
+}
