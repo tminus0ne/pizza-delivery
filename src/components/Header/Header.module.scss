@@ -20,6 +20,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+      background: #a73d13;
+    }
 
     .cartLine {
       opacity: 0.5;
