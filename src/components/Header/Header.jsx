@@ -9,7 +9,7 @@ export const Header = () => {
         <img src="/img/logo.png" alt="logo" />
         <div>
           <h1 className={styles.title}>Pizza Delivery</h1>
-          <p>Most tasty pizza in the Universe</p>
+          <p>The most tasty pizza in the Universe</p>
         </div>
       </div>
       <div className={styles.headerRight}>
