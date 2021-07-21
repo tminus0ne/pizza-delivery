@@ -11,11 +11,11 @@ export const Card = () => {
       <div className={styles.options}>
         <ul>
           <li>thin</li>
-          <li>traditional</li>
+          <li className={styles.active}>traditional</li>
         </ul>
 
         <ul>
-          <li>26 cm</li>
+          <li className={styles.active}>26 cm</li>
           <li>30 cm</li>
           <li>40 cm</li>
         </ul>
