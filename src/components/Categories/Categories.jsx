@@ -2,22 +2,30 @@ import React from 'react';
 
 import styles from './Categories.module.scss';
 
-export const Categories = () => {
+export const Categories = ({ items, onClickItem }) => {
+  const [activeItem, setActiveItem] = React.useState(null);
+
+  const onSelectItem = (index) => setActiveItem(index);
+
   return (
     <div className={styles.categories}>
       <ul>
-        <li>All</li>
-        <li>Meat</li>
-        <li>Vegetarian</li>
-        <li>Grill</li>
-        <li>Spicy</li>
-        <li>Calzone</li>
+        <li
+          className={activeItem === null ? `${styles.active}` : ''}
+          onClick={() => onSelectItem(null)}
+        >
+          All
+        </li>
+        {items.map((item, index) => (
+          <li
+            className={activeItem === index ? `${styles.active}` : ''}
+            onClick={() => onSelectItem(index)}
+            key={`${item}_${index}`}
+          >
+            {item}
+          </li>
+        ))}
       </ul>
-      <div>
-        <img src="" alt="" />
-        <p></p>
-        <span></span>
-      </div>
     </div>
   );
 };

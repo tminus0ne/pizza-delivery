@@ -9,7 +9,9 @@ export function App() {
     <div className="wrapper">
       <Header />
       <div className="menu">
-        <Categories />
+        <Categories
+          items={['Meat', 'Vegetarian', 'Grill', 'Spicy', 'Calzone']}
+        />
         <Popup />
       </div>
       <h2>All Pizza</h2>

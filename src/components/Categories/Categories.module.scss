@@ -35,4 +35,13 @@
       }
     }
   }
+
+  .active {
+    color: #fff;
+    background: #000;
+
+    &:hover {
+      background: #000;
+    }
+  }
 }
