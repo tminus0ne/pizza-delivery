@@ -1,4 +1,5 @@
 import React from 'react';
+import { CartButton } from '../CartButton';
 
 import styles from './Header.module.scss';
 
@@ -13,12 +14,7 @@ export const Header = () => {
         </div>
       </div>
       <div className={styles.headerRight}>
-        <button>
-          <span>520 ₽</span>
-          <div className={styles.cartLine}>|</div>
-          <img src="/img/cart.svg" alt="Cart icon" />
-          <span>3</span>
-        </button>
+        <CartButton />
       </div>
     </header>
   );
