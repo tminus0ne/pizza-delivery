@@ -16,15 +16,16 @@ export const Categories = ({ items, onClickItem }) => {
         >
           All
         </li>
-        {items.map((item, index) => (
-          <li
-            className={activeItem === index ? `${styles.active}` : ''}
-            onClick={() => onSelectItem(index)}
-            key={`${item}_${index}`}
-          >
-            {item}
-          </li>
-        ))}
+        {items &&
+          items.map((item, index) => (
+            <li
+              className={activeItem === index ? `${styles.active}` : ''}
+              onClick={() => onSelectItem(index)}
+              key={`${item}_${index}`}
+            >
+              {item}
+            </li>
+          ))}
       </ul>
     </div>
   );
