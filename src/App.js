@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from './components/Card/Card';
+import { Card } from './components/Card';
 import { Categories } from './components/Categories';
 import { Header } from './components/Header';
 import { Popup } from './components/Popup';

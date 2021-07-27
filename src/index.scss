@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #ffdf8c;
   color: #2c2c2c;
+  padding: 50px 0;
 }
 
 * {
@@ -15,7 +16,7 @@ body {
 .wrapper {
   background: #fff;
   max-width: 1400px;
-  margin: 50px auto;
+  margin: 0 auto;
 
   h2 {
     margin: 30px auto;
@@ -25,7 +26,7 @@ body {
 
 .content {
   padding-bottom: 90px;
-  margin: 30px 50px;
+  margin: 30px 50px 0;
   display: flex;
   gap: 35px;
   flex-wrap: wrap;

@@ -1,6 +1,7 @@
 .popup {
   display: flex;
   align-items: center;
+  position: relative;
 
   img {
     cursor: pointer;
@@ -30,6 +31,31 @@
     letter-spacing: 0.015em;
   }
 
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.015em;
+    cursor: pointer;
+    padding: 12px 20px;
+
+    &.active,
+    &:hover {
+      background: rgba(254, 95, 30, 0.05);
+    }
+
+    &.active {
+      font-weight: bold;
+      color: #fe5f1e;
+    }
+  }
+
   span {
     font-style: normal;
     font-weight: normal;
@@ -37,13 +63,23 @@
     line-height: 17px;
     letter-spacing: 0.015em;
     color: #fe5f1e;
-    padding-bottom: 2px;
-    cursor: pointer;
     border-bottom: 1px dashed #fe5f1e;
-    transition: color 0.3s ease-in-out;
+    cursor: pointer;
 
     &:hover {
       color: lighten(#fe5f1e, 15%);
     }
+  }
+
+  .list {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 160px;
+    z-index: 1;
   }
 }
