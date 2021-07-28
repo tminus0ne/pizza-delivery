@@ -1,23 +1,20 @@
 import React from 'react';
-import { Card } from './components/Card';
-import { Categories } from './components/Categories';
+import { Route } from 'react-router-dom';
+
 import { Header } from './components/Header';
-import { Popup } from './components/Popup';
+import { Cart } from './pages/Cart';
+import { Home } from './pages/Home';
 
 export function App() {
   return (
     <div className="wrapper">
       <Header />
-      <div className="menu">
-        <Categories
-          items={['Meat', 'Vegetarian', 'Grill', 'Spicy', 'Calzone']}
-        />
-        <Popup items={['popularity', 'price', 'title']} />
-      </div>
-      <h2>All Pizza</h2>
-      <section className="content">
-        <Card />
-      </section>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route exact path="/cart">
+        <Cart />
+      </Route>
     </div>
   );
 }
