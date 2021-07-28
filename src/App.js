@@ -12,7 +12,7 @@ export function App() {
         <Categories
           items={['Meat', 'Vegetarian', 'Grill', 'Spicy', 'Calzone']}
         />
-        <Popup />
+        <Popup items={['popularity', 'price', 'title']} />
       </div>
       <h2>All Pizza</h2>
       <section className="content">
