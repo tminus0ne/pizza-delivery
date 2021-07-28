@@ -5,13 +5,17 @@
 
   img {
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 
     &:hover {
       transform: rotate(90deg);
     }
 
     &:active {
+      transform: rotate(180deg);
+    }
+
+    &.rotated {
       transform: rotate(180deg);
     }
   }

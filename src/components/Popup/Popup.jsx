@@ -30,7 +30,11 @@ export const Popup = ({ items }) => {
   return (
     <div ref={sortRef} className={styles.popup}>
       <button>
-        <img src="/img/popup-arrow.svg" alt="" />
+        <img
+          className={isOpen ? `${styles.rotated}` : ''}
+          src="/img/popup-arrow.svg"
+          alt="pointer icon"
+        />
       </button>
       <p>Sort by:</p>
       <span onClick={togglePopupVisibility}>{activeLabel}</span>
