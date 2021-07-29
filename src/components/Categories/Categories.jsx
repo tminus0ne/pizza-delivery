@@ -8,7 +8,7 @@ export const Categories = ({ items, onClickItem }) => {
   const onSelectItem = (index) => setActiveItem(index);
 
   return (
-    <div className={styles.categories}>
+    <nav className={styles.categories}>
       <ul>
         <li
           className={activeItem === null ? `${styles.active}` : ''}
@@ -27,6 +27,6 @@ export const Categories = ({ items, onClickItem }) => {
             </li>
           ))}
       </ul>
-    </div>
+    </nav>
   );
 };
