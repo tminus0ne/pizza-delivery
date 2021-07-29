@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import styles from './Card.module.scss';
 
@@ -64,4 +65,19 @@ export const Card = ({ name, imageUrl, price, types, sizes }) => {
       </div>
     </article>
   );
+};
+
+Card.propTypes = {
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  types: PropTypes.arrayOf(PropTypes.number),
+  sizes: PropTypes.arrayOf(PropTypes.number),
+};
+
+Card.defaultProps = {
+  name: '---',
+  price: 0,
+  types: [],
+  sizes: [],
 };
