@@ -4,7 +4,7 @@ import { Card } from '../components/Card';
 import { Categories } from '../components/Categories';
 import { Popup } from '../components/Popup';
 
-export const Home = () => {
+export const Home = ({ items }) => {
   return (
     <>
       <div className="menu">
@@ -15,7 +15,9 @@ export const Home = () => {
       </div>
       <h2>All Pizza</h2>
       <section className="content">
-        <Card />
+        {items.map((item) => (
+          <Card key={item.id} {...item} />
+        ))}
       </section>
     </>
   );
