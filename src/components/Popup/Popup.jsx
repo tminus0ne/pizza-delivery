@@ -6,7 +6,7 @@ export const Popup = ({ items }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
   const sortRef = React.useRef();
-  const activeLabel = items[activeItem];
+  const activeLabel = items[activeItem].name;
 
   const togglePopupVisibility = () => {
     setIsOpen(!isOpen);
@@ -41,13 +41,13 @@ export const Popup = ({ items }) => {
       {isOpen && (
         <ul className={styles.list}>
           {items &&
-            items.map((item, index) => (
+            items.map((obj, index) => (
               <li
                 className={activeItem === index ? `${styles.active}` : ''}
                 onClick={() => onSelectItem(index)}
-                key={`${item}_${index}`}
+                key={`${obj.type}_${index}`}
               >
-                {item}
+                {obj.name}
               </li>
             ))}
         </ul>

@@ -11,7 +11,13 @@ export const Home = ({ items }) => {
         <Categories
           items={['Meat', 'Vegetarian', 'Grill', 'Spicy', 'Calzone']}
         />
-        <Popup items={['popularity', 'price', 'title']} />
+        <Popup
+          items={[
+            { name: 'popularity', type: 'popularity' },
+            { name: 'price', type: 'price' },
+            { name: 'title', type: 'title' },
+          ]}
+        />
       </div>
       <h2>All Pizza</h2>
       <section className="content">
