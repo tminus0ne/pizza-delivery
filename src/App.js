@@ -1,65 +1,31 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Header } from './components/Header';
 import { Cart } from './pages/Cart';
 import { Home } from './pages/Home';
 import { setPizzas } from './redux/actions/pizzas';
 
-// export function App() {
-//   React.useEffect(() => {
-//     axios
-//       .get('http://localhost:3000/db.json')
-//       .then(({ data }) => setPizzas(data.pizzas));
-//   }, []);
+export function App() {
+  const dispatch = useDispatch();
 
-//   return (
-//     <div className="wrapper">
-//       <Header />
-//       <Route exact path="/">
-//         <Home items={pizzas} />
-//       </Route>
-//       <Route exact path="/cart">
-//         <Cart />
-//       </Route>
-//     </div>
-//   );
-// }
-
-// import { store } from './redux/store';
-class App extends React.Component {
-  componentDidMount() {
+  React.useEffect(() => {
     axios.get('http://localhost:3000/db.json').then(({ data }) => {
-      this.props.setPizzas(data.pizzas);
+      dispatch(setPizzas(data.pizzas));
     });
-  }
+  }, [dispatch]);
 
-  render() {
-    return (
-      <div className="wrapper">
-        <Header />
-        <Route exact path="/">
-          <Home items={this.props.items} />
-        </Route>
-        <Route exact path="/cart">
-          <Cart />
-        </Route>
-      </div>
-    );
-  }
+  return (
+    <div className="wrapper">
+      <Header />
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route exact path="/cart">
+        <Cart />
+      </Route>
+    </div>
+  );
 }
-
-const mapStateToProps = (state) => {
-  return { items: state.pizzas.items };
-};
-
-// const mapDispatchToProps = { setPizzas }; <- shorter version of code beneath thi line
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setPizzas: (item) => dispatch(setPizzas(item)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
