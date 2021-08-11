@@ -2,10 +2,16 @@ import React from 'react';
 
 import styles from './Categories.module.scss';
 
-export const Categories = ({ items, onClickItem }) => {
+export const Categories = React.memo(function Categories({
+  items,
+  onClickItem,
+}) {
   const [activeItem, setActiveItem] = React.useState(null);
 
-  const onSelectItem = (index) => setActiveItem(index);
+  const onSelectItem = (index) => {
+    setActiveItem(index);
+    onClickItem(index);
+  };
 
   return (
     <nav className={styles.categories}>
@@ -29,4 +35,4 @@ export const Categories = ({ items, onClickItem }) => {
       </ul>
     </nav>
   );
-};
+});

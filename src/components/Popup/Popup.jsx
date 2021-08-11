@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Popup.module.scss';
 
-export const Popup = ({ items }) => {
+export const Popup = React.memo(function Popup({ items }) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
   const sortRef = React.useRef();
@@ -54,4 +54,4 @@ export const Popup = ({ items }) => {
       )}
     </div>
   );
-};
+});
